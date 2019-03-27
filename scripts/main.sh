@@ -15,7 +15,7 @@ cd provision
 
 # setup local repo
 tar xvfz "git.tar.gz"
-git clone /tmp/provision/.git /usr/lib/paedml-ssl
+git clone /tmp/provision/.git "/usr/lib/$VM_NAME"
 
 # run generated deployment
 bash deploy.sh

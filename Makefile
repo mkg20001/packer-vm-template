@@ -1,5 +1,5 @@
 build: prepare
-	packer build packer.json
+	packer build -var-file=../variables.json packer.json
 
 prepare:
 	rm -rf provision
