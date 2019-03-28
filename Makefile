@@ -15,6 +15,6 @@ prepare:
 	mv provision.tar.gz provision/bundle.tar.gz
 export:
 	bash scripts/post-process.sh
-	tar cvf $(VM_NAME).tar.xz --lzma $(VM_NAME)
+	tar cvf vm.tar.xz --lzma vm-$(VM_NAME)
 
 dist: build export
