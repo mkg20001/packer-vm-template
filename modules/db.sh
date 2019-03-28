@@ -1,6 +1,7 @@
 #!/bin/bash
 
 init_db() {
+  DB="$1"
   if [ ! -e "$DB" ]; then
     mkdir -p "$(dirname $DB)"
     touch "$DB"
