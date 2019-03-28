@@ -22,7 +22,7 @@ self() {
   cd "$MAIN"
   git pull --recurse-submodules
   git gc --aggressive
-  bash scripts/update.sh
+  bash shared/scripts/update.sh
 
   exit 0
 }
