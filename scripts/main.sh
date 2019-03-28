@@ -15,12 +15,26 @@ cd provision
 
 # setup local repo
 tar xvfz "git.tar.gz"
-git clone /tmp/provision/.git "/usr/lib/$VM_NAME"
-
-# run generated deployment
-bash deploy.sh
+git clone --recursive /tmp/provision/.git "/usr/lib/$VM_NAME"
 
 # set keyboard to german
 loadkeys de
 localectl set-keymap de
+
+cd "/usr/lib/$VM_NAME"
+
+# fix git url, ci sometimes sets it to something else
+git remote set-url origin "https://github.com/mkg20001/$VM_NAME.git"
+# checkout to master, but without pulling yet
+git checkout -b master
+git fetch
+git branch master -u origin/master
+
+# run generated deployment
+bash /tmp/provision/deploy.sh
+
+
+if [ -e scripts/main.sh ]; then # if we have a main script
+  bash scripts/main.sh # then run it
+fi
 
