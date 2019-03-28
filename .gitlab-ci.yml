@@ -6,3 +6,6 @@
   artifacts:
     paths:
       - vm.tar.xz
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
