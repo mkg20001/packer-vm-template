@@ -74,8 +74,8 @@
         "type": "shell"
     }],
     "variables": {
-        "ssh_fullname": "Admin",
+        "ssh_fullname": "VMAdmin",
         "ssh_password": "schlange",
-        "ssh_username": "admin"
+        "ssh_username": "vmadmin"
     }
 }
