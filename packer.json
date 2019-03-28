@@ -75,7 +75,7 @@
     }],
     "variables": {
         "ssh_fullname": "VMAdmin",
-        "ssh_password": "schlange",
+        "ssh_password": "catprotec",
         "ssh_username": "vmadmin"
     }
 }
