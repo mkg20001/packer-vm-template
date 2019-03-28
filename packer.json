@@ -72,5 +72,10 @@
             "scripts/main.sh"
         ],
         "type": "shell"
-    }]
+    }],
+    "variables": {
+        "ssh_fullname": "Admin",
+        "ssh_password": "schlange",
+        "ssh_username": "admin"
+    }
 }
