@@ -22,4 +22,9 @@ export:
 	tar cvf vm.tar.xz --lzma vm-$(VM_NAME)
 	mv vm.tar.xz ..
 
+dev:
+	cp Vagrantfile ..
+	sed -s "s|VMNAME|$(VM_NAME)|g" -i ../Vagrantfile
+	cd .. && rm -rf node_modules package-lock.json && npm i && OVERRIDE_LOCATION=/usr/lib/$(VM_NAME) npx dpl-tool deploy.yaml > deploy.sh && vagrant up
+
 dist: build export
