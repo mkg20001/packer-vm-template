@@ -2,7 +2,10 @@
 
 set -e
 
-# TODO: integrate into packer.json
+# TODO: integrate into packer.json (call after build as a post processor)
+
+NAME=$(dir -w 1 | grep ^vm-)
+NAME=${NAME/"vm-"/""}
 
 cd "$(dir -w 1 | grep ^vm-)"
 
@@ -23,14 +26,8 @@ XML_AHCI="        <rasd:ResourceSubType>AHCI</rasd:ResourceSubType>
 XML_LSCI="        <rasd:ResourceSubType>lsilogic</rasd:ResourceSubType>
         <rasd:ResourceType>6</rasd:ResourceType>"
 
-#VBoxManage export "$ID" -o dist/paedML-ssl.ovf \
-#  --vsys 0 \
-#  --product "Let's Encrypt for paedML" --producturl "https://github.com/mkg20001/paedML-ssl" \
-#  --vendor "Maciej Krüger (mkg20001)" --vendorurl "https://mkg20001.io" \
-#  --description "paedML SSL"
-
-mv paedml-ssl.ovf paedml-ssl-vbox.ovf
-VMWARE=$(cat paedml-ssl-vbox.ovf | sed "s|<vssd:VirtualSystemType>virtualbox-2.2</vssd:VirtualSystemType>|<vssd:VirtualSystemType>vmx-08</vssd:VirtualSystemType>|g")
+mv $NAME.ovf $NAME-vbox.ovf
+VMWARE=$(cat $NAME-vbox.ovf | sed "s|<vssd:VirtualSystemType>virtualbox-2.2</vssd:VirtualSystemType>|<vssd:VirtualSystemType>vmx-08</vssd:VirtualSystemType>|g")
 VMWARE=${VMWARE/"$XML_SOUNDCARD"/""}
 VMWARE=${VMWARE/"$XML_AHCI"/"$XML_LSCI"}
-echo "$VMWARE" > paedml-ssl-vmware.ovf
+echo "$VMWARE" > $NAME-vmware.ovf
