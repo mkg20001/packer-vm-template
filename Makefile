@@ -11,7 +11,7 @@ prepare:
 	# create deploy in main folder
 	rm -rf node_modules package-lock.json
 	npm i
-	OVERRIDE_LOCATION=/var/lib/$(VM_NAME) npx dpl-tool ../deploy.yaml > provision/deploy.sh
+	OVERRIDE_LOCATION=/usr/lib/$(VM_NAME) npx dpl-tool ../deploy.yaml > provision/deploy.sh
 	# run custom prov
 	PROV=$(PWD)/shared/provision make -C $(PWD) prepare
 	# prepare
