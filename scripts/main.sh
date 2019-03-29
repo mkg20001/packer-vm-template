@@ -30,14 +30,16 @@ git checkout -b master
 git fetch
 git branch master -u origin/master
 
+# fetch infra
+mkdir node_modules
+git clone https://github.com/mkg20001/mkg-infra node_modules/mkg-infra
+
 # run generated deployment
 bash /tmp/provision/deploy.sh
-
 
 if [ -e scripts/main.sh ]; then # if we have a main script
   bash scripts/main.sh # then run it
 fi
-
 
 
 ## CLEANUP ##
