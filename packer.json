@@ -39,7 +39,7 @@
         "export_opts": [
           "--vsys", "0",
           "--product", "{{user `meta_name`}}",
-          "--producturl", "{{user `meta_url`}}",
+          "--producturl", "{{user `meta_home`}}",
           "--vendor", "Maciej Krüger (mkg20001)",
           "--vendorurl", "https://mkg20001.io",
           "--description", "{{user `meta_desc`}}"
