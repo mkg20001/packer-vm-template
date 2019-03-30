@@ -1,0 +1,12 @@
+# nodeJS
+node_modules
+package-lock.json
+# vagrant
+.vagrant
+/Vagrantfile
+*.log
+deploy.sh
+# editor
+*.bak
+*~
+

@@ -41,6 +41,11 @@ ask_nic() {
 }
 
 setup_net() {
+  if cat /etc/passwd | grep vagrant >/dev/null; then
+    d "Vagrant"
+    return 0
+  fi
+
   ask_nic
 
   _ADDR=()

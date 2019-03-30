@@ -28,16 +28,18 @@ pushdb() {
 }
 
 popdb() {
-  rm -f "$DB"
+  if [[ "$DB" == "/tmp/"* ]]; then
+    rm -f "$DB"
+  fi
   init_db "$DB_OLD"
 }
 
-_db_get() {
-  set $(echo "$1" | tr "[:lower:]" "[:upper:]")="$(_db $1)"
+_db_get() { # TODO: throw on empty
+  export $(echo "$1" | tr "[:lower:]" "[:upper:]")="$(_db $1)"
 }
 
 _db_exists() {
   ex=0
-  cat "$DB" | grep "^$1=" | sed "s|$1=||g" > /dev/null || ex=$?
+  (cat "$DB" | grep "^$1=" >/dev/null) || ex=$?
   return $ex
 }

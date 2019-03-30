@@ -20,6 +20,7 @@ git clone --recursive /tmp/provision/.git "/usr/lib/$VM_NAME"
 # set keyboard to german
 loadkeys de
 localectl set-keymap de
+dpkg-reconfigure locale
 
 cd "/usr/lib/$VM_NAME"
 
