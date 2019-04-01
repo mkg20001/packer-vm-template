@@ -35,7 +35,7 @@ popdb() {
 }
 
 _db_get() { # TODO: throw on empty
-  export $(echo "$1" | tr "[:lower:]" "[:upper:]" | sed "s|.|_|g")="$(_db $1)"
+  export $(echo "$1" | tr "[:lower:]" "[:upper:]" | sed "s|\\.|_|g")="$(_db $1)"
 }
 
 _db_exists() {
