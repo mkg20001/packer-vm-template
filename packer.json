@@ -88,6 +88,6 @@
         "ssh_username": "vmadmin",
         "update": "true",
         "vagrantfile_template": "",
-        "virtualbox_guest_os_type": "Ubuntu_64",
+        "virtualbox_guest_os_type": "Ubuntu_64"
     }
 }
