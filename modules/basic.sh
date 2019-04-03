@@ -11,3 +11,15 @@ i() {
 d() {
   echo "[!] $*"
 }
+
+function contains() {
+  match="$1"
+  shift
+  for e in "$@"; do
+    if [ "$e" == "$match" ]; then
+      return 0
+    fi
+  done
+  return 1
+}
+
