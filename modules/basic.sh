@@ -12,7 +12,7 @@ d() {
   echo "[!] $*"
 }
 
-function contains() {
+contains() {
   match="$1"
   shift
   for e in "$@"; do
