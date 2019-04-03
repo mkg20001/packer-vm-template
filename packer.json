@@ -75,8 +75,19 @@
         "type": "shell"
     }],
     "variables": {
+        "boot_command_prefix": "<enter><wait><f6><esc><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs><bs>",
+        "headless": "true",
+        "iso_checksum": "a2cb36dc010d98ad9253ea5ad5a07fd6b409e3412c48f1860536970b073c98f5",
+        "iso_checksum_type": "sha256",
+        "iso_name": "ubuntu-18.04.2-server-amd64.iso",
+        "iso_path": "iso",
+        "iso_url": "http://cdimage.ubuntu.com/ubuntu/releases/bionic/release/ubuntu-18.04.2-server-amd64.iso",
+        "preseed": "preseed.cfg",
         "ssh_fullname": "VMAdmin",
         "ssh_password": "catprotec",
-        "ssh_username": "vmadmin"
+        "ssh_username": "vmadmin",
+        "update": "true",
+        "vagrantfile_template": "",
+        "virtualbox_guest_os_type": "Ubuntu_64",
     }
 }
