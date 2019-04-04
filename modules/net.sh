@@ -26,13 +26,13 @@ ask_net() {
 
 ask_nic() {
   echo "[*] Netzwerkadapter:"
-  ip -o link show | grep ": ens"
+  ip -o link show | grep ": e"
   NIC_NOT_SET=true
   while $NIC_NOT_SET; do
     prompt nic "Netzwerkadapter der verwendet werden soll"
     _NIC=$(_db nic)
 
-    for nic in $(ip -j link show | jq -cr ".[] | .ifname" | grep "^ens"); do
+    for nic in $(ip -j link show | jq -cr ".[] | .ifname" | grep "^e"); do
       if [[ "$nic" == "$_NIC" ]]; then
         NIC_NOT_SET=false
       fi
