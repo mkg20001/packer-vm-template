@@ -43,6 +43,7 @@ ask_nic() {
 setup_net() {
   if cat /etc/passwd | grep vagrant >/dev/null; then
     d "Vagrant"
+    _db nic enp0s3
     return 0
   fi
 
