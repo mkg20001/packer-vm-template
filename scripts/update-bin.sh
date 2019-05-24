@@ -16,7 +16,7 @@ self() {
   purgelist=`echo $(dpkg -l | awk '$1 == "rc" { print $2; }')`
   if [ ! -z "$purgelist" ]; then
     echo "[*] Entfernen von unbenötigten Paketdaten ($purgelist)..."
-    apt-get remove --purge "$purgelist" -y
+    apt-get remove --purge $purgelist -y
   fi
 
   cd "$MAIN"
