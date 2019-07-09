@@ -15,7 +15,11 @@ apt-get install -y openssh-server git net-tools open-vm-tools gnupg2
 bash deploy.sh
 
 if [ -e scripts/main.sh ]; then
-  mv scripts/main.sh
+  mv scripts/main.sh scripts/main.sh.bak
 fi
 
 bash shared/scripts/update.sh
+
+if [ -e scripts/main.sh.bak ]; then
+  mv scripts/main.sh.bak scripts/main.sh
+fi
